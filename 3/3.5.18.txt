@@ -13,8 +13,8 @@ if t1 then t2 else t3
 
 t3 -> t3'
 --------------
-if t1 then t2 else t3
- -> if t1 then t2 else t3'
+if t1 then v2 else t3
+ -> if t1 then v2 else t3'
 
 
 - E-COND
