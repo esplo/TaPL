@@ -1,0 +1,40 @@
+prd cn
+= fst (cn ss zz)
+
+zz  // 3 step
+= pair c0 c0
+= (\f. \s. \b. b f s) c0 c0
+-> (\s. \b. b c0 s) c0
+-> (\b. b c0 c0)
+= (\b. b (\s. \z. z) (\s'. \z'. z'))
+-> \b b (\s. \z. z)
+
+
+snd p  // 1 step
+= (\p'. p' fls) p
+-> p fls
+= p (\t. \f. f)
+
+plus c1 A  // 5 step
+= (\m. \n. \s. \z. m s (n s z)) c1 A
+-> (\n. \s. \z. c1 s (n s z)) A
+-> \s. \z. c1 s (A s z)
+= \s. \z. (\s'. \z'. s' z') s (A s z)
+-> \s. \z. s (A s z)
+-> ... (A を snd p に。+1step)
+= \s. \z. s (p (\t. \f. f) s z) 
+-> \s. \z. s (p z)
+
+
+ss // 8 step
+= \p. pair (snd p) (plus c1 (snd p))
+... 6 step
+= \p. pair (p (\t. \f. f)) (\s. \z. s (p z))
+= \p. (\f. \s. \b. b f s) (p (\t. \f. f)) (\s. \z. s (p z))
+-> \p. (\s. \b. b  (p (\t. \f. f)) s) (\s. \z. s (p z))
+-> \p. (\b. b  (p (\t. \f. f)) (\s. \z. s (p z)))
+
+
+cn自体の簡約は1step。
+この処理がn回行われるので、n * 17 回程度の評価ステップが必要。
+fstは1stepなので、+1される。

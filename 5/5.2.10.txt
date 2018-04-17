@@ -1,0 +1,2 @@
+g = \rec. \n. \t. \s. \z. if n == 0 then z else rec (n-1) s t
+churchnat = fix g 0

@@ -1,0 +1,1 @@
+minus = \n. \m. \s. \z. m (prd n) s z

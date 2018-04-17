@@ -1,0 +1,2 @@
+g = \rec. \l if (realbool (isnil l)) then 0 else (plus (head l) (rec (tail l)))
+sum = fix g

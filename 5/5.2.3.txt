@@ -1,0 +1,4 @@
+plusを展開する
+
+\m. \n. \s. \z. m (n s (c0 s z))
+-> \m. \n. \s. \z. m (n s z)
