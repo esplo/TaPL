@@ -1,0 +1,4 @@
+g = \rec. \n. if iszero n then c0 else scc (rec (pred n))
+churchnat = fix g
+
+// scc (scc ( ... (c0)))

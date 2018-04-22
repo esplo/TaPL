@@ -1,4 +1,12 @@
 plusを展開する
 
-\m. \n. \s. \z. m (n s (c0 s z))
--> \m. \n. \s. \z. m (n s z)
+times
+= \m. \n. m (plus n) c0
+= \m. \n. m ((\m'. \n'. \s'. \z'. m' s' (n' s' z')) n) c0
+-> \m. \n. m (\n'. \s'. \z'. n s' (n' s' z')) c0
+-> \m. \n. m (\s'. \z'. n s' (c0 s' z')) 
+-> \m. \n. m (\s'. \z'. n s' z')
+
+
+等式変形しているのでplusは出てきてはいないが……
+本当に動くの？

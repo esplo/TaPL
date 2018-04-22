@@ -1,0 +1,6 @@
+g1 = \rec. \l test (isnil l) c0 (plus (head l) (rec (tail l)))
+// は5.2.9により
+g2 = \rec. \l test (isnil l) (\x. c0) (\x. (plus (head l) (rec (tail l)))) c0
+sum = fix g2
+
+

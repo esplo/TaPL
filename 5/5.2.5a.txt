@@ -1,0 +1,2 @@
+nに対してprdをm回繰り返す
+minus = \n. \m. m prd n

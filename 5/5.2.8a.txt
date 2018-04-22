@@ -1,0 +1,21 @@
+nil = \c. \n. n
+// e1 = \c. \n. c h n
+// e2 = \c. \n. c u (c h n)
+
+
+cons 
+= \h. \t. \c. \n. c h (t c n)
+// t c n : nilに対して、cを使ってtなリストを作る
+
+
+isnil
+= \t. t (\x. \y. fls) tru
+
+
+head
+= \t. t (\x. \y. x) fls
+
+
+tail
+= \l. fst (l (\x. \p. pair (snd p) (cons x (snd p))) (pair nil nil))
+// prdと同じ

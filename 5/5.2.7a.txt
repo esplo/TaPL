@@ -1,0 +1,5 @@
+equal
+= \m. \n. and (iszro (m prd n)) (iszro (n prd m))
+
+
+＼天才／

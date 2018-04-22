@@ -2,3 +2,6 @@ Church数nを取り、再帰的にsccを定義することでn+1を得る。
 
 scc 0 s z = z
 scc n s z = s (scc n-1 s z)
+
+
+が、再帰はつらい

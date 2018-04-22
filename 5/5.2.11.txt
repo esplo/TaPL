@@ -1,2 +1,5 @@
 g = \rec. \l if (realbool (isnil l)) then 0 else (plus (head l) (rec (tail l)))
 sum = fix g
+
+
+「Church数のリストの総和」を自然数で表すのかと思った
