@@ -1,0 +1,14 @@
+(1)
+
+removenames T x = Tから一番右のxを返す
+removenames T (\.u x) = \. removenames [T:u] x
+removenames T (S1 S2) = ( (removenames T S1) (removenames T S2) )
+
+(2)
+
+
+restorenames T k = T[k]
+restorenames T (\. k) = \NN. restorenames [T:NN] k
+restorenames T (S1 S2) = ( (restorenames T S1) (restorenames T S2) )
+
+NN := New Name
