@@ -1,0 +1,9 @@
+成り立たない。
+
+# counterexample
+
+p.70より
+if true then 0 else false
+は型を持てないが、評価をするとNatになる。
+
+t -> t' かつ t':Nat だが、t:Tではないので反例となる。
