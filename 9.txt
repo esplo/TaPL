@@ -1,0 +1,86 @@
+# 9.2.1
+
+Because no base types are defined in the style, which means any value will be any type.
+
+
+# 9.2.2
+
+(Q. where did T-TRUE come from?)
+
+
+1.
+                                        -------------------------- T-FALSE
+f:Bool->Bool ∈ f:Bool->Bool             f:Bool->Bool ⊢ false:Bool
+--------------------------- T-VAR       --------------------------------------------------- T-IF
+f:Bool->Bool ⊢ f:Bool->Bool             f:Bool->Bool  ⊢ if false then true else false:Bool
+-------------------------------------------------------------------------------------------------  T-APP
+f:Bool->Bool ⊢ f (if false then true else false):Bool
+
+
+2.
+
+f:Bool->Bool,x:Bool ∈ f:Bool->Bool          
+----------------------------------- T-VAR    ------------------------------------------------------
+f:Bool->Bool,x:Bool ⊢ f:Bool->Bool           f:Bool->Bool,x:Bool ⊢ if x then false else x:Bool
+-----------------------------------------------------------------------------------------------------  T-APP
+f:Bool->Bool,x:Bool ⊢ \x : f (if x then false else x) : Bool->Bool
+-----------------------------------------------------------------------------  T-ABS
+f:Bool->Bool ⊢ \x : Bool. f (if x then false else x) : Bool->Bool
+
+
+# 9.2.3
+
+e.g.)
+f: Bool->Bool->Bool, x:Bool, y:Bool
+f: (Bool->Bool)->Bool->Bool, x:Bool->Bool, y:Bool
+...
+
+in general
+f: T->U->Bool, x:T, y:U
+
+
+
+# 9.3.2
+
+(1) `x` has to be `S->T` type since one argument is applied to `x` and will be evaluated as `T`
+
+(2) `S` in (1) has to be `S->T` since both `x` has to be the same type
+
+(3) `S` in (2) has to be ...
+
+As described above, derivation cannot determine `S` and this is infinite number of types; therefore, there is no context Γ.
+
+
+# 9.3.3
+
+Lemma 9.3.1 covers all the situation
+
+TODO:
+
+
+# 9.3.9
+
+TODO:
+
+
+# 9.3.10
+
+No.
+
+counterexample:
+
+Suppose that a nested abstraction with an unused argument, then pass a different typed value as the argument. Although this abstraction is considered to be ill-typed, the induced one is well-typed.
+
+(\x:S. \y:T. y) v:U  :??
+[E-APPABS] -> [x->v] (\y:T. y) : T
+
+
+# 9.4.1
+
+8-1
+introduction: T-TRUE, T-FALSE
+elimination: T-IF
+
+8-2
+introduction: T-ZERO, **T-SUCC**
+elimination: T-PRED, T-ISZERO
