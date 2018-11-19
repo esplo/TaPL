@@ -1,0 +1,33 @@
+// Getting Over It --- The reader may enjoy the following little puzzle:
+
+11.2.1
+(答えを見た)
+
+TODO
+
+
+// wildcard binder = _
+
+11.3.2
+
+Γ⊢t:T'
+------------------
+Γ⊢\_:T.t :T'
+
+(λ_:T.t) v 􏰃-> t
+
+
+
+11.4.1
+
+(1)
+t as T -> (\x:T. x) t
+
+(2)
+derived formとは異なり情報が欠落している。
+そのため、なるべくE-AscribeEagerの適用を遅らせないと、最終的な評価結果が異なる恐れがある。
+
+
+
+
+
